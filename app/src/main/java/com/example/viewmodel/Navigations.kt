@@ -14,7 +14,7 @@ enum class Halaman{
 
 @Composable
 fun Navigations(
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     viewModel: MahasiswaViewModel = viewModel(),
     navHost: NavHostController = rememberNavController()
 ){
