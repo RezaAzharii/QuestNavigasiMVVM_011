@@ -20,8 +20,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             ViewModelTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
+                    Navigations(
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
