@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -12,6 +13,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.viewmodel.model.ListJK
+import com.example.viewmodel.ui.view.DetailMahasiswaView
 import com.example.viewmodel.ui.view.FormMahasiswaView
 import com.example.viewmodel.ui.viewmodel.MahasiswaViewModel
 
@@ -41,6 +43,15 @@ fun Navigations(
                     onSubmitClick = {
                         viewModel.SaveDataMhs(it)
                         navHost.navigate(Halaman.Data.name)
+                    }
+                )
+            }
+            composable(route = Halaman.Data.name) {
+                DetailMahasiswaView(
+                    dataMhs = uiState,
+                    modifier = Modifier,
+                    onBackButton = {
+                        navHost.popBackStack()
                     }
                 )
             }
