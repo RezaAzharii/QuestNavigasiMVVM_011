@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun FormMahasiswaView(
     modifier: Modifier = Modifier,
-    listGender: List<String>,
+    listJk: List<String>,
     onSubmitClick: (MutableList<String>) -> Unit
 ){
     var nama by remember { mutableStateOf("") }
@@ -60,7 +60,7 @@ fun FormMahasiswaView(
         )
 
         Row {
-            listGender.forEach { item ->
+            listJk.forEach { item ->
                 Row (verticalAlignment = Alignment.CenterVertically) {
                     RadioButton(
                         selected = memilihJK == item,

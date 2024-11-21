@@ -14,7 +14,8 @@ import com.example.viewmodel.model.Mahasiswa
 @Composable
 fun DetailMahasiswaView(
     dataMhs: Mahasiswa,
-    modifier: Modifier
+    modifier: Modifier = Modifier,
+    onBackButton: () -> Unit
 ){
     val listDataMhs = listOf(
         Pair("Nama", dataMhs.nama),
@@ -35,7 +36,8 @@ fun DetailMahasiswaView(
 
 @Composable
 fun DetailMhs(
-    judul: String, isinya: String
+    judul: String,
+    isinya: String
 ){
     Row (
         modifier = Modifier.fillMaxWidth()
